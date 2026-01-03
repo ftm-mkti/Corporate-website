@@ -1,5 +1,8 @@
 :root {
-    --orange: #E76F51;
+    --E76F51: #E76F51;
+    --D2D2D2: #D2D2D2;
+    --FFFFFF: #FFFFFF;
+    --3B3735: #3B3735;
 }
 
 html {
@@ -17,12 +20,20 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 /*========================================*/
 
 .header {
     background: linear-gradient(rgba(59, 55, 53, 0.5), rgba(59, 55, 53, 0.5)),
     url("../images/header-bg.jpg") center;
     background-size: cover;
+    height: 88vh;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
 }
 
 .nav {
@@ -30,6 +41,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 5rem;
+}
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem
 }
 
 .app-logo {
@@ -44,18 +61,63 @@ body {
 
 .menu {
     display: none;
+
 }
 
 .menu__item {
-
+    margin-left: 2rem;
 }
 
 .menu__link {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    color: var(--D2D2D2);
+    transition: color 0.2s ease-in;
+    position: relative;
+    z-index: 1;
+}
 
+.menu__link--active:before {
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 3px;
+    background-color: var(--E76F51);
+    border-radius: 30px;
+    transform: rotate(45deg);
+    top: 8px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    margin: 0 auto;
+}
+
+.menu__link:hover {
+    color: var(--FFFFFF);
 }
 
 .nav-menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -25rem;
+    background-color: var(--3B3735);
+    width: 25rem;
+    padding: 4rem 3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu__open {
+    left: 0;
+}
+
+.nav-menu__text {
+    font-family: "Archivo Black", sans-serif;
+    color: var(--FFFFFF);
+    font-size: 20px;
+    border-bottom: 3px solid var(--FFFFFF);
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .mobile-menu {
@@ -63,35 +125,80 @@ body {
 }
 
 .mobile-menu__item {
-
+    margin-bottom: 1.5rem;
 }
 
 .mobile-menu__link {
+    color: var(--FFFFFF);
+    font-size: 18px;
+    position: relative;
+}
 
+.mobile-menu__link::before {
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: var(--E76F51);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto;
+    border-radius: 40px;
+    transition: all 100ms ease-in;
+}
+
+.mobile-menu__link:hover {
+    padding-left: 3rem;
+}
+
+.mobile-menu__link:hover::before {
+    width: 2.5rem;
 }
 
 .nav-menu__links {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-menu__link {
-
+    color: var(--FFFFFF);
+    border: 1px solid var(--FFFFFF);
+    flex: 1;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
 }
 
-.header__links {
+.nav-menu__link:hover {
+    background-color: var(--FFFFFF);
+    color: var(--3B3735);
+}
+
+.nav__links {
     display: none;
 }
 
-.header__link {
-
+.nav__link {
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 18px;
+    color: var(--FFFFFF);
 }
 
-.header__link--border {
+.nav__link--border:hover {
+    background-color: var(--FFFFFF);
+    color: var(--3B3735);
+}
 
+.nav__link--border {
+    padding: 13px 38px;
+    border: 1px solid var(--FFFFFF);
+    border-radius: 100px;
 }
 
 .nav__btn {
-    background-color: #FFFFFF;
+    background-color: var(--FFFFFF);
     width: 5rem;
     height: 5rem;
     border-radius: 2rem;
@@ -103,7 +210,7 @@ body {
 .nav__btn-line {
     position: relative;
     display: block;
-    background-color: var(--orange);
+    background-color: var(--E76F51);
     width: 2.5rem;
     height: 0.3rem;
     border-radius: 2rem;
@@ -117,7 +224,7 @@ body {
     position: absolute;
     width: 2.5rem;
     height: 0.3rem;
-    background-color: var(--orange);
+    background-color: var(--E76F51);
     border-radius: 2rem;
     transition: all 0.2s ease-in-out;
 }
@@ -131,7 +238,7 @@ body {
 }
 
 .nav__btn--open .nav__btn-line::before {
-    transform: translateY(-8px) rotate(45deg);
+    transform: translateY(-7px) rotate(45deg);
 }
 
 .nav__btn--open .nav__btn-line {
