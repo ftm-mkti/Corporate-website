@@ -2,15 +2,52 @@
     .header__content-title {
         font-size: 4rem;
     }
+
+    .destinations__title {
+        font-size: 2.4rem;
+    }
+
+    .newsletter__caption {
+        width: 30rem;
+    }
+
+    .newsletter__email-box {
+        margin: 2rem 1rem;
+    }
 }
 
 @media (min-width: 576px) {
+    .newsletter__caption {
+        width: 35rem;
+    }
 
+    .newsletter__email-box {
+        margin: 4rem 5rem;
+    }
 }
 
 @media (min-width: 768px) {
     .header__content-title {
         font-size: 5rem;
+    }
+
+    .newsletter {
+        flex-direction: row;
+    }
+
+    .newsletter__title {
+        font-size: 3rem;
+        width: auto;
+        padding: 4rem 2rem;
+        text-align: left;
+    }
+    .newsletter__caption {
+        width: 43rem;
+        padding: 0 1.5rem;
+        text-align: left;
+    }
+    .newsletter__email-box {
+         margin: 4rem 0 4rem 1.5rem;
     }
 }
 
@@ -37,13 +74,16 @@
     .nav__link--border {
         padding: 10px 30px;
     }
-    .nav-menu  {
+
+    .nav-menu {
         display: none;
     }
 }
 
 @media (min-width: 1200px) {
-
+    .newsletter {
+        justify-content: space-around;
+    }
 
 }
 
