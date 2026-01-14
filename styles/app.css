@@ -487,6 +487,30 @@ a {
     flex-direction: column-reverse;
     justify-content: center;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -45px;
+    background-image: url("/images/svgs/shape3.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 78rem;
+    z-index: 0;
+
+}
+
+.newsletter__content,
+.newsletter__banner {
+    position: relative;
+    z-index: 1;
 }
 
 .newsletter__title {
